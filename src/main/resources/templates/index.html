@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezt csináld</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="title">Ezt kell csinálni.</h1>
+
+    <ul class="task-list">
+        <li th:each="todo : ${toDoModels}">
+            <span class="task-title" th:text="${todo.name}"></span>
+            <form method="post" th:action="@{/task-done/{id}(id=${todo.id})}">
+                <button class="task-action" type="submit">Kész</button>
+            </form>
+        </li>
+    </ul>
+
+    <form action="add" method="post" class="add-task-form">
+        <input type="text" name="task" placeholder="Új feladat">
+        <button type="submit">Hozzáadás</button>
+    </form>
+</div>
+</body>
+</html>

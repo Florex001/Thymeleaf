@@ -1,0 +1,92 @@
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .task-list li:last-child {
+            border-bottom: none;
+        }
+
+        .task-list li .task-title {
+            flex: 1;
+        }
+
+        .task-list li .task-action {
+            margin-left: 10px;
+        }
+
+        .add-task-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .add-task-form input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .add-task-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .task-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+                border-bottom: none;
+            }
+
+            .task-list li .task-action {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .add-task-form {
+                flex-direction: column;
+            }
+
+            .add-task-form input[type="text"] {
+                margin-top: 10px;
+            }
+        }
